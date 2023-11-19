@@ -1,9 +1,9 @@
 #include <stdio.h>
 #define n 20
 void swap(int *a,int *b){
-    int *x=a;
-    a=b;
-    b=x;
+    int x=*a;
+    *a=*b;
+    *b=x;
 }
 void main(){
     int num,i,j,p[n],at[n],wt[n],bt[n],tat[n],ct[n];
@@ -23,7 +23,7 @@ void main(){
         p[i]=i;
     }
     for(i=0;i<num;i++){
-        for(j=i+1;j<n;j++){
+        for(j=i+1;j<num;j++){
             if(at[i]>at[j]){
                 swap(&at[i],&at[j]);
                 swap(&bt[i],&bt[j]);
